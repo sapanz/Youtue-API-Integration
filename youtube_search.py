@@ -37,9 +37,9 @@ def keyword_search(options):
       playlists.append('%s (%s)' % (search_result['snippet']['title'],
                                     search_result['id']['playlistId']))
 
-  print '\nVideos:\n', '\n'.join(videos), '\n'
-  print 'Channels:\n', '\n'.join(channels), '\n'
-  print 'Playlists:\n', '\n'.join(playlists), '\n'
+  print('\nVideos:\n', '\n'.join(videos), '\n', sep="")
+  print('Channels\n', '\n'.join(videos), '\n', sep="")
+  print('Playlists\n', '\n'.join(videos), '\n', sep="")
 
 
 if __name__ == '__main__':
@@ -52,4 +52,4 @@ if __name__ == '__main__':
   try:
     keyword_search(args)
   except HttpError, e:
-    print 'An HTTP error %d occurred:\n%s' % (e.resp.status, e.content)
+    print('An HTTP error %d occurred:\n%s' % (e.resp.status, e.content))
