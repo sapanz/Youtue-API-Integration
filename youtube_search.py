@@ -44,12 +44,12 @@ def keyword_search(options):
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
-  keyword = raw_input("Enter the keyword to search : ")
+  keyword = input("Enter the keyword to search : ")
   parser.add_argument('--q', help='Search term', default=keyword)
   parser.add_argument('--max-results', help='Max results', default=20)
   args = parser.parse_args()
 
   try:
     keyword_search(args)
-  except HttpError, e:
+  except HttpError as e:
     print('An HTTP error %d occurred:\n%s' % (e.resp.status, e.content))
